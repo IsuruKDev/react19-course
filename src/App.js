@@ -1,16 +1,22 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
-import Card from './Card';
+import ChatComponent from './ChatComponent';
+import ChatInput from './ChatInput';
 
 function App() {
+
+  const [chatMessages, setChatMessages] = useState([]);
+
   return (
     <div className="App">
-      <h2>Welcome to React 19 course...</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-      <button className="button-4" role="button">Button 4</button>
-
-      <br/>
-      <Card/>      
+      <ChatComponent 
+        chatMessages = {chatMessages}
+      />
+      <ChatInput
+        chatMessages = {chatMessages} 
+        setChatMessages = {setChatMessages}
+      />
     </div>
   );
 }
