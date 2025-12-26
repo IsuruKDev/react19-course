@@ -31,18 +31,20 @@ function ChatInput({chatMessages, setChatMessages}) {
   }
 
   return (
-    <>
+    <div className='chat-input-container'>
         <input 
             type='text' 
             placeholder='Send a message to Chatbot...' 
             size={40}
             onChange={textChangeEvent}
             value={chatInput}
+            className='chat-input'
         />
         <button
+          className='send-button'
           onClick={addMessage}
         >Send</button>
-    </>
+    </div>
   )
 }
 
